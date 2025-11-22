@@ -434,13 +434,13 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Clients */}
-      <Clients />
+      {/* Clients
+      <Clients /> */}
 
       {/* Contact */}
-      <div id="contact">
+      {/* <div id="contact">
         <Contact />
-      </div>
+      </div> */}
     </div>
   );
 }

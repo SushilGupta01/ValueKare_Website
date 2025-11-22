@@ -1,5 +1,5 @@
 import { Facebook, Twitter, Linkedin, Instagram, Youtube, Phone, Mail, MapPin } from 'lucide-react';
-import logo from 'figma:asset/918b477c0df526c77d56e64af98643e2308b399a.png';
+import logo from '../assets/images/valuecare-logo.png';  // ✅ Updated logo path
 
 interface FooterProps {
   onNavigate?: (page: string) => void;
@@ -30,13 +30,19 @@ export function Footer({ onNavigate }: FooterProps) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
+
   return (
     <footer className="bg-foreground text-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          
           {/* About */}
           <div>
-            <img src={logo} alt="Value Kare Group" className="h-14 w-auto mb-4 brightness-0 invert" />
+            <img
+              src={logo}
+              alt="Value Kare Group"
+              className="h-14 w-auto mb-4 brightness-0 invert"
+            />
             <p className="text-background/80 mb-4">
               Value Kare Group is an Outsourcing and Consulting services organization specializing in Medical treatment and education, Asset Inventory automation
             </p>
@@ -72,20 +78,25 @@ export function Footer({ onNavigate }: FooterProps) {
                   </a>
                 </div>
               </div>
+
               <div className="flex items-start gap-2">
                 <Mail size={18} className="mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="mb-1">Email</p>
-                  <a href="mailto:vikash@valuekare.in" className="hover:text-background transition-colors">
+                  <a
+                    href="mailto:vikash@valuekare.in"
+                    className="hover:text-background transition-colors"
+                  >
                     vikash@valuekare.in
                   </a>
                 </div>
               </div>
+
               <div className="flex items-start gap-2">
                 <MapPin size={18} className="mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="mb-1">Address</p>
-                  <a 
+                  <a
                     href="https://www.google.com/maps/search/?api=1&query=Malviya+National+Institute+Of+Technology+MNIT+Incubation+Center+MIIC+Jaipur"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -96,6 +107,7 @@ export function Footer({ onNavigate }: FooterProps) {
                   </a>
                 </div>
               </div>
+
             </div>
           </div>
         </div>

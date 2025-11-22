@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Menu, X, ChevronDown, FileText, Box, Globe } from 'lucide-react';
 import { Button } from './ui/button';
 import logo from '../assets/images/valuecare-logo.png';
-import { EnquiryModal } from "./EnquiryModal";
 
 interface NavbarProps {
   currentPage?: string;
@@ -12,7 +11,6 @@ interface NavbarProps {
 export function Navbar({ currentPage = 'home', onNavigate }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleNavigate = (page: string) => {
     onNavigate(page);
@@ -147,7 +145,9 @@ export function Navbar({ currentPage = 'home', onNavigate }: NavbarProps) {
 
             {/* CTA Button */}
             <div className="hidden md:block">
-              <Button onClick={() => setIsModalOpen(true)}>Enquire Now</Button>
+              <Button onClick={() => handleNavigate('contact')}>
+                Enquire Now
+              </Button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -166,6 +166,7 @@ export function Navbar({ currentPage = 'home', onNavigate }: NavbarProps) {
         {isOpen && (
           <div className="md:hidden bg-background border-b border-border">
             <div className="px-2 pt-2 pb-3 space-y-1">
+
               {navItems.map((item) => (
                 <button
                   key={item.page}
@@ -234,17 +235,15 @@ export function Navbar({ currentPage = 'home', onNavigate }: NavbarProps) {
               ))}
 
               <div className="px-3 pt-2">
-                <Button onClick={() => setIsModalOpen(true)} className="w-full">
+                <Button onClick={() => handleNavigate('contact')} className="w-full">
                   Enquire Now
                 </Button>
               </div>
+
             </div>
           </div>
         )}
       </nav>
-
-      {/* Enquiry Popup Modal */}
-      <EnquiryModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   );
 }
