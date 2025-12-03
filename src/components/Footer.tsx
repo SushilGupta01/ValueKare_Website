@@ -15,11 +15,19 @@ const footerLinks = {
     { name: 'Contact Us', page: 'contact' },
   ],
   social: [
+<<<<<<< HEAD
     { icon: Facebook, href: 'https://www.facebook.com/valuekaresociety/', label: 'Facebook' },
     // { icon: Twitter, href: 'https://twitter.com/', label: 'Twitter' },
     { icon: Linkedin, href: 'https://www.linkedin.com/company/value-kare-technologies/posts/?feedView=all', label: 'LinkedIn' },
     // { icon: Instagram, href: 'https://www.instagram.com/', label: 'Instagram' },
     // { icon: Youtube, href: 'https://www.youtube.com/', label: 'YouTube' },
+=======
+    { icon: Facebook, href: 'https://www.facebook.com/', label: 'Facebook' },
+    { icon: Twitter, href: 'https://twitter.com/', label: 'Twitter' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/', label: 'LinkedIn' },
+    { icon: Instagram, href: 'https://www.instagram.com/', label: 'Instagram' },
+    { icon: Youtube, href: 'https://www.youtube.com/', label: 'YouTube' },
+>>>>>>> cc46963472f36317b1c893aeb4ff8e4fc65a583c
   ],
 };
 
@@ -103,7 +111,11 @@ export function Footer({ onNavigate }: FooterProps) {
                     className="hover:text-background transition-colors"
                   >
                     ValueKare Technologies PVT LTD<br />
+<<<<<<< HEAD
                     Malviya National Institute Of Technology (MNIT) Incubation Center MIIC Start Up Room No 008 Jawahar lal Nehru Marg Malviya nagar Jaipur 302017
+=======
+                    Malviya National Institute Of Technology (MNIT) Incubation Center MIIC Start Up Room No 107 Jawahar lal Nehru Marg Malviya nagar Jaipur 302017
+>>>>>>> cc46963472f36317b1c893aeb4ff8e4fc65a583c
                   </a>
                 </div>
               </div>
@@ -134,7 +146,11 @@ export function Footer({ onNavigate }: FooterProps) {
         {/* Bottom Bar */}
         <div className="text-center">
           <p className="text-background/80">
+<<<<<<< HEAD
              Value Kare Group  © 2025
+=======
+            ©2025 Value Kare Group. Developed by UWS Inc.
+>>>>>>> cc46963472f36317b1c893aeb4ff8e4fc65a583c
           </p>
         </div>
       </div>

@@ -29,6 +29,7 @@ import { IndustryCoverage } from '../components/IndustryCoverage';
 import { Clients } from '../components/Clients';
 import { Contact } from '../components/Contact';
 
+<<<<<<< HEAD
 
 // --------------- IMPORT CLIENT LOGOS -----------------
 import ckBirlaLogo from "../assets/images/client/client-1.png";
@@ -52,6 +53,8 @@ const clientLogos = [
   manipalLogo,
   zeusLogo
 ];
+=======
+>>>>>>> cc46963472f36317b1c893aeb4ff8e4fc65a583c
 const differentiators = [
   {
     icon: Users,
@@ -412,7 +415,11 @@ export function HomePage() {
         </div>
       </section>
 
+<<<<<<< HEAD
        {/* ---------------- VALUE TO CLIENT ---------------- */}
+=======
+      {/* Value to Client Section */}
+>>>>>>> cc46963472f36317b1c893aeb4ff8e4fc65a583c
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -422,6 +429,7 @@ export function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
+<<<<<<< HEAD
             <h2 className="text-3xl sm:text-4xl mb-8">Value To Client</h2>
 
             {/* Images above the slider (same as before) */}
@@ -471,6 +479,40 @@ export function HomePage() {
             `}
           </style>
 
+=======
+            <h2 className="text-3xl sm:text-4xl mb-8">
+              Value To Client
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="rounded-xl overflow-hidden shadow-lg"
+              >
+                <ImageWithFallback
+                  src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHZhbHVlJTIwdGVhbXdvcmt8ZW58MXx8fHwxNzYzMTY5MTU1fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                  alt="Value to Client"
+                  className="w-full h-80 object-cover"
+                />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="rounded-xl overflow-hidden shadow-lg"
+              >
+                <ImageWithFallback
+                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwY29sbGFib3JhdGlvbnxlbnwxfHx8fDE3NjMxNjkxNTV8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                  alt="Team Collaboration"
+                  className="w-full h-80 object-cover"
+                />
+              </motion.div>
+            </div>
+          </motion.div>
+>>>>>>> cc46963472f36317b1c893aeb4ff8e4fc65a583c
         </div>
       </section>
 
