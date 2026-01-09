@@ -23,13 +23,9 @@ export function Navbar({ currentPage = 'home', onNavigate }: NavbarProps) {
     { name: 'Home', page: 'home' },
     { name: 'About Us', page: 'about' },
     { name: 'Services', page: 'services' },
-<<<<<<< HEAD
-
     // ⭐ NEW ITEMS
     { name: 'Careers', page: 'careers' },
     { name: 'Blogs', page: 'blogs' },
-=======
->>>>>>> cc46963472f36317b1c893aeb4ff8e4fc65a583c
   ];
 
   const solutions = [
