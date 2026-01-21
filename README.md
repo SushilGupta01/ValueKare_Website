@@ -11,3 +11,4 @@
   npm install -D tailwindcss @tailwindcss/cli postcss autoprefixer
 
   npm install -D @tailwindcss/vite
+ 

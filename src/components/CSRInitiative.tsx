@@ -3,84 +3,125 @@ import { Eye, School, Monitor, Activity } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardDescription } from './ui/card';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
-const initiatives = [
-  {
-    icon: School,
-    title: 'Vision Checks in Govt Schools & Primary Schools',
-  },
-  {
-    icon: Eye,
-    title: 'Blindness prevention refractive Challenges & Deficiency',
-  },
-  {
-    icon: Monitor,
-    title: 'Screen Vision Syndrome prevention',
-  },
-  {
-    icon: Activity,
-    title: 'Software enabled Tracking Follow up Interphase with Govt PHC and Children Vision care',
-  },
-];
-
 export function CSRInitiative() {
+  const points = [
+    {
+      text: 'Awareness & education programs for children to prevent avoidable vision loss.',
+      bg: 'rgba(250, 153, 121, 0.10)',
+      solid: '#fa9979',
+    },
+    {
+      text: 'Vision screening in government and primary schools.',
+      bg: 'rgba(35, 179, 150, 0.10)',
+      solid: '#23b396',
+    },
+    {
+      text: 'Early detection of refractive challenges and visual deficiencies.',
+      bg: 'rgba(137, 115, 217, 0.10)',
+      solid: '#8973d9',
+    },
+    {
+      text: 'Software-enabled tracking with government PHCs for long-term follow-ups.',
+      bg: 'rgba(232, 13, 130, 0.10)',
+      solid: '#e80d82',
+    },
+  ];
+
   return (
-    <section className="py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl sm:text-4xl mb-4">
-            CSR Initiative
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Programmes For Awareness & Education in Children for Vision care and prevention of blindness.
-          </p>
-        </motion.div>
+    <section className="py-28 bg-[#f6f5fb]">
+      <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
+        <div className="grid lg:grid-cols-12 gap-20 items-center">
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+          {/* LEFT – IMAGE STORY (REDUCED & ELEGANT) */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
             viewport={{ once: true }}
+            className="lg:col-span-6"
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {initiatives.map((initiative, index) => {
-                const Icon = initiative.icon;
-                return (
-                  <Card key={index} className="hover:shadow-lg transition-shadow">
-                    <CardHeader>
-                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-3">
-                        <Icon className="text-primary" size={24} />
-                      </div>
-                      <CardTitle className="text-base">{initiative.title}</CardTitle>
-                    </CardHeader>
-                  </Card>
-                );
-              })}
+            <div className="grid gap-6">
+              {/* Main image */}
+              <div className="rounded-3xl overflow-hidden shadow-xl">
+                <ImageWithFallback
+                  src="../src/assets/images/6.jpg"
+                  alt="Healthcare digital tracking"
+                  className="w-full h-[420px] object-cover object-center"
+                />
+              </div>
+
+              {/* Supporting images */}
+              <div className="grid grid-cols-2 gap-6">
+                <div className="rounded-2xl overflow-hidden shadow-lg">
+                  <ImageWithFallback
+                    src="../src/assets/images/4.jpg"
+                    alt="Children education program"
+                    className="w-full h-52 object-cover"
+                  />
+                </div>
+
+                <div className="rounded-2xl overflow-hidden shadow-lg">
+                  <ImageWithFallback
+                    src="../src/assets/images/1.jpg"
+                    alt="Vision check camp"
+                    className="w-full h-52 object-cover"
+                  />
+                </div>
+              </div>
             </div>
           </motion.div>
 
+          {/* RIGHT – CONTENT */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
             viewport={{ once: true }}
+            className="lg:col-span-6"
           >
-            <div className="rounded-2xl overflow-hidden shadow-xl">
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1584792323914-329ce9bf59db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMGVkdWNhdGlvbiUyMHZpc2lvbnxlbnwxfHx8fDE3NjMyMDM5NTZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="Children Vision Education"
-                className="w-full h-full object-cover"
-              />
+            <span className="inline-block mb-5 text-sm font-medium text-primary px-4 py-2 bg-white border border-primary/30 rounded-full">
+              CSR Initiative
+            </span>
+
+            <h2 className="text-[38px] lg:text-[46px] leading-[1.05] tracking-tight mb-10">
+              Creating Impact Through
+              <span className="block text-primary mt-2">
+                Responsible Healthcare
+              </span>
+            </h2>
+
+            <div className="space-y-6 max-w-xl">
+              {points.map((p, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: i * 0.08 }}
+                  viewport={{ once: true }}
+                  className="relative p-5 pl-10 rounded-2xl
+                             transition-all duration-300
+                             hover:-translate-y-[2px]
+                             hover:shadow-lg"
+                  style={{ backgroundColor: p.bg }}
+                >
+                  {/* Accent bar */}
+                  <span
+                    className="absolute left-0 top-0 h-full w-[5px] rounded-r-full"
+                    style={{ backgroundColor: p.solid }}
+                  />
+
+                  <p className="text-[16px] leading-relaxed text-gray-700">
+                    {p.text}
+                  </p>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>
   );
 }
+
+

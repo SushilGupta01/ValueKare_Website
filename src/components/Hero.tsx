@@ -104,19 +104,19 @@ export function Hero() {
           <div className="flex justify-center gap-20 pt-10 border-t border-border/60">
             <div>
               <div className="text-[52px] font-semibold text-primary mb-2">
-                500+
+                12+
               </div>
               <div className="text-[14px] text-muted-foreground uppercase tracking-wide">
-                Projects Completed
+                Happy Clients
               </div>
             </div>
 
             <div>
               <div className="text-[52px] font-semibold text-primary mb-2">
-                15+
+                5+
               </div>
               <div className="text-[14px] text-muted-foreground uppercase tracking-wide">
-                Years Experience
+                Live Projects
               </div>
             </div>
 
