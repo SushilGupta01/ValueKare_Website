@@ -9,18 +9,15 @@ import {
   Mail,
   MapPin
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import logo from '../assets/images/valuecare-logo.png';
 
-interface FooterProps {
-  onNavigate?: (page: string) => void;
-}
+export function Footer() {
+  const navigate = useNavigate();
 
-export function Footer({ onNavigate }: FooterProps) {
   const handleNavigation = (page: string) => {
-    if (onNavigate) {
-      onNavigate(page);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+    navigate(`/${page === 'home' ? '' : page}`);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (

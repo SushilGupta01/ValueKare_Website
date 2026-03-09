@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from './components/ui/sonner';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
@@ -11,64 +11,173 @@ import { ContactPage } from './pages/ContactPage';
 import { PatientEMRPage } from './pages/PatientEMRPage';
 import { FixedAssetPage } from './pages/FixedAssetPage';
 import { InternationalMedicalTourismPage } from './pages/InternationalMedicalTourismPage';
-
-/* ---------------- NEW PAGES YOU ADDED ---------------- */
 import { CareersPage } from './pages/CareersPage';
 import { BlogsPage } from './pages/BlogsPage';
-/* ------------------------------------------------------ */
+import { GoToTop } from "./components/GoToTop";
+import { HelmetProvider } from 'react-helmet-async';
+
+// Admin Pages
+import { AdminLayout } from './components/AdminLayout';
+import AdminLoginPage from './pages/AdminLoginPage';
+import AdminDashboardPage from './pages/AdminDashboardPage';
+import AdminBlogsPage from './pages/AdminBlogsPage';
+import AdminCareersPage from './pages/AdminCareersPage';
+import AdminApplicationsPage from './pages/AdminApplicationsPage';
+import AdminSubmissionsPage from './pages/AdminSubmissionsPage';
+
 export default function App() {
-  const [currentPage, setCurrentPage] = useState('home');
-
-  const renderPage = () => {
-    switch (currentPage) {
-      case 'home':
-        return <HomePage onNavigate={setCurrentPage} />;
-
-      case 'about':
-        return <AboutPage />;
-
-      case 'services':
-        return <ServicesPage />;
-
-      case 'gallery':
-        return <GalleryPage />;
-
-      case 'clients':
-        return <ClientsPage />;
-
-      case 'contact':
-        return <ContactPage />;
-
-      case 'patient-emr':
-        return <PatientEMRPage onNavigate={setCurrentPage} />;
-
-      case 'fixed-asset-inventory':
-        return <FixedAssetPage onNavigate={setCurrentPage} />;
-
-      case 'medical-tourism':
-        return <InternationalMedicalTourismPage onNavigate={setCurrentPage} />;
-
-      /* ------- NEW ROUTES FOR CAREERS + BLOGS ------- */
-      case 'careers':
-        return <CareersPage />;
-
-      case 'blogs':
-        return <BlogsPage />;
-      /* ----------------------------------------------- */
-
-      default:
-        return <HomePage onNavigate={setCurrentPage} />;
-    }
-  };
-
   return (
-    <div className="min-h-screen">
-      <Navbar currentPage={currentPage} onNavigate={setCurrentPage} />
-      <main>
-        {renderPage()}
-      </main>
-      <Footer onNavigate={setCurrentPage} />
-      <Toaster />
-    </div>
+    <HelmetProvider>
+      <BrowserRouter>
+        <Routes>
+          {/* Public Routes */}
+          <Route
+            path="/"
+            element={
+              <>
+                <Navbar />
+                <main>
+                  <HomePage />
+                </main>
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <>
+                <Navbar />
+                <main>
+                  <AboutPage />
+                </main>
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/services"
+            element={
+              <>
+                <Navbar />
+                <main>
+                  <ServicesPage />
+                </main>
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/gallery"
+            element={
+              <>
+                <Navbar />
+                <main>
+                  <GalleryPage />
+                </main>
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/clients"
+            element={
+              <>
+                <Navbar />
+                <main>
+                  <ClientsPage />
+                </main>
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/contact"
+            element={
+              <>
+                <Navbar />
+                <main>
+                  <ContactPage />
+                </main>
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/patient-emr"
+            element={
+              <>
+                <Navbar />
+                <main>
+                  <PatientEMRPage />
+                </main>
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/fixed-asset-inventory"
+            element={
+              <>
+                <Navbar />
+                <main>
+                  <FixedAssetPage />
+                </main>
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/medical-tourism"
+            element={
+              <>
+                <Navbar />
+                <main>
+                  <InternationalMedicalTourismPage />
+                </main>
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/careers"
+            element={
+              <>
+                <Navbar />
+                <main>
+                  <CareersPage />
+                </main>
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/blogs"
+            element={
+              <>
+                <Navbar />
+                <main>
+                  <BlogsPage />
+                </main>
+                <Footer />
+              </>
+            }
+          />
+
+          {/* Admin Routes */}
+          <Route path="/admin/login" element={<AdminLoginPage />} />
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route index element={<AdminDashboardPage />} />
+            <Route path="blogs" element={<AdminBlogsPage />} />
+            <Route path="careers" element={<AdminCareersPage />} />
+            <Route path="applications" element={<AdminApplicationsPage />} />
+            <Route path="submissions" element={<AdminSubmissionsPage />} />
+          </Route>
+        </Routes>
+        <GoToTop />
+        <Toaster />
+      </BrowserRouter>
+    </HelmetProvider>
   );
 }
+

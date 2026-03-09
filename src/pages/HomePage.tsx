@@ -18,21 +18,26 @@ import { IndustryCoverage } from '../components/IndustryCoverage';
 import { Clients } from '../components/Clients';
 import { Contact } from '../components/Contact';
 import { TrustedMarquee } from '../components/TrustedMarquee';
+import { Helmet } from 'react-helmet-async';
 
 export function HomePage() {
-  const scrollToContact = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <div>
+      <Helmet>
+        <title>ValueKare Group | Healthcare RFID Solutions, EMR & Medical Tourism</title>
+        <meta name="description" content="Leading healthcare solutions provider offering RFID asset tracking, fixed asset management, EMR systems, and international medical tourism services." />
+        <meta property="og:title" content="ValueKare Group | Healthcare RFID Solutions, EMR & Medical Tourism" />
+        <meta property="og:description" content="Leading healthcare solutions provider offering RFID asset tracking, fixed asset management, EMR systems, and international medical tourism services." />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="ValueKare Group | Healthcare RFID Solutions, EMR & Medical Tourism" />
+        <meta name="twitter:description" content="Leading healthcare solutions provider offering RFID asset tracking, fixed asset management, EMR systems, and international medical tourism services." />
+        <link rel="canonical" href="https://valuekare.in/" />
+      </Helmet>
       <Hero />
 
       {/* Welcome Section with Images */}
-      <About scrollToContact={scrollToContact}/>
+      <About />
 
       {/* Key Differentiators */}
       <Differentiators />

@@ -2,10 +2,22 @@ import { motion } from 'motion/react';
 import { About } from '../components/About';
 import { Differentiators } from '../components/Differentiators';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
+import { Helmet } from 'react-helmet-async';
 
 export function AboutPage() {
   return (
     <div className="pt-20">
+      <Helmet>
+        <title>About ValueKare Group | Healthcare Innovation & Operational Excellence</title>
+        <meta name="description" content="Learn about ValueKare Group's mission to transform healthcare operations through innovative RFID solutions and comprehensive consulting services." />
+        <meta property="og:title" content="About ValueKare Group | Healthcare Innovation & Operational Excellence" />
+        <meta property="og:description" content="Learn about ValueKare Group's mission to transform healthcare operations through innovative RFID solutions and comprehensive consulting services." />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About ValueKare Group | Healthcare Innovation & Operational Excellence" />
+        <meta name="twitter:description" content="Learn about ValueKare Group's mission to transform healthcare operations through innovative RFID solutions and comprehensive consulting services." />
+        <link rel="canonical" href="https://valuekare.in/about" />
+      </Helmet>
       {/* Page Header */}
       <section className="relative bg-gradient-to-br from-[#0d1912] via-[#0f2418] to-[#0b1a12] py-16 overflow-hidden">
 

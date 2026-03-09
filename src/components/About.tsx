@@ -10,13 +10,11 @@ import {
 } from 'lucide-react';
 import { Button } from './ui/button';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { useNavigate } from 'react-router-dom';
 
-interface AboutProps {
-  scrollToContact: () => void;
-}
+export function About() {
+  const navigate = useNavigate();
 
-
-export function About({ scrollToContact }: AboutProps) {
   return (
     <>
       {/* ================= ABOUT SECTION ================= */}
@@ -84,7 +82,7 @@ export function About({ scrollToContact }: AboutProps) {
 
               <Button
                 size="lg"
-                onClick={scrollToContact}
+                onClick={() => navigate('/contact')}
                 className="h-14 px-8 text-base shadow-lg shadow-primary/20"
               >
                 Learn More

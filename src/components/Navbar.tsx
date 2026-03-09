@@ -1,19 +1,26 @@
 import { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, FileText, Box, Globe } from 'lucide-react';
 import { Button } from './ui/button';
 import logo from '../assets/images/valuecare-logo.png';
 
-interface NavbarProps {
-  currentPage?: string;
-  onNavigate: (page: string) => void;
-}
-
-export function Navbar({ currentPage = 'home', onNavigate }: NavbarProps) {
+export function Navbar() {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
 
+  const getCurrentPage = () => {
+    const path = location.pathname.slice(1) || 'home';
+    if (path === 'fixed-asset-inventory') return 'fixed-asset-inventory';
+    if (path === 'medical-tourism') return 'medical-tourism';
+    return path;
+  };
+
+  const currentPage = getCurrentPage();
+
   const handleNavigate = (page: string) => {
-    onNavigate(page);
+    navigate(`/${page === 'home' ? '' : page}`);
     setIsOpen(false);
     setIsSolutionsOpen(false);
     window.scrollTo(0, 0);

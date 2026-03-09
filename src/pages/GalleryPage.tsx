@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { CSRInitiative } from '../components/CSRInitiative';
+import { Helmet } from 'react-helmet-async';
 
 // Importing all updated gallery images
 import img1 from '../assets/images/gallery/1.jpg';
@@ -23,6 +24,17 @@ const galleryImages = [
 export function GalleryPage() {
   return (
     <div className="pt-20">
+      <Helmet>
+        <title>Our Work Gallery | Healthcare Projects & Implementations</title>
+        <meta name="description" content="Explore our portfolio of healthcare projects, asset management implementations, RFID solutions, and successful medical facility transformations." />
+        <meta property="og:title" content="Our Work Gallery | Healthcare Projects & Implementations" />
+        <meta property="og:description" content="Explore our portfolio of healthcare projects, asset management implementations, RFID solutions, and successful medical facility transformations." />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Our Work Gallery | Healthcare Projects & Implementations" />
+        <meta name="twitter:description" content="Explore our portfolio of healthcare projects, asset management implementations, RFID solutions, and successful medical facility transformations." />
+        <link rel="canonical" href="https://valuekare.in/gallery" />
+      </Helmet>
   {/* Page Header */}
       <section className="relative bg-gradient-to-br from-[#0d1912] via-[#0f2418] to-[#0b1a12] py-16 overflow-hidden">
         {/* Ambient green glow (more controlled, more premium) */}

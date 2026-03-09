@@ -7,6 +7,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import emailjs from "@emailjs/browser";
 import { EMAIL_CONFIG } from "../lib/emailConfig";
+import { contactApi } from "../lib/api";
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -16,6 +17,7 @@ export function Contact() {
     subject: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: any) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -23,6 +25,7 @@ export function Contact() {
 
   const sendEmail = async (e: any) => {
     e.preventDefault();
+    setIsSubmitting(true);
     toast.info("Sending message...");
 
     const payload = {
@@ -36,6 +39,7 @@ export function Contact() {
     };
 
     try {
+      // Send via EmailJS
       await emailjs.send(
         EMAIL_CONFIG.SERVICE_ID,
         EMAIL_CONFIG.USER_TEMPLATE_ID,
@@ -50,6 +54,15 @@ export function Contact() {
         EMAIL_CONFIG.PUBLIC_KEY
       );
 
+      // Save to backend database
+      await contactApi.submit({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        subject: formData.subject,
+        message: formData.message,
+      });
+
       toast.success("Message sent successfully!");
       setFormData({
         name: "",
@@ -59,8 +72,10 @@ export function Contact() {
         message: "",
       });
     } catch (err) {
-      console.error("EmailJS Error:", err);
+      console.error("Error:", err);
       toast.error("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -179,9 +194,10 @@ export function Contact() {
                 <div className="pt-4 flex justify-end">
                   <Button
                     type="submit"
+                    disabled={isSubmitting}
                     className="h-12 px-8 shadow-lg shadow-primary/30 hover:shadow-xl transition"
                   >
-                    Send Message
+                    {isSubmitting ? "Sending..." : "Send Message"}
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
                 </div>

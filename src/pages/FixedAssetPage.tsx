@@ -1,12 +1,11 @@
 import { Box, Barcode, Radio, TrendingUp, FileSearch, Shield, Database, CheckCircle } from 'lucide-react';
 import { Card } from '../components/ui/card';
 import { Button } from '../components/ui/button';
+import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
-interface FixedAssetPageProps {
-  onNavigate?: (page: string) => void;
-}
-
-export function FixedAssetPage({ onNavigate }: FixedAssetPageProps) {
+export function FixedAssetPage() {
+  const navigate = useNavigate();
   const features = [
     {
       icon: <Radio className="w-8 h-8 text-primary" />,
@@ -106,6 +105,17 @@ export function FixedAssetPage({ onNavigate }: FixedAssetPageProps) {
 
   return (
     <div className="min-h-screen pt-20">
+      <Helmet>
+        <title>Fixed Asset Management | RFID Asset Tracking & Inventory Audit Solutions</title>
+        <meta name="description" content="RFID and barcode-based fixed asset management, automated audits, lifecycle tracking, depreciation calculations, and regulatory compliance solutions." />
+        <meta property="og:title" content="Fixed Asset Management | RFID Asset Tracking & Inventory Audit Solutions" />
+        <meta property="og:description" content="RFID and barcode-based fixed asset management, automated audits, lifecycle tracking, depreciation calculations, and regulatory compliance solutions." />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Fixed Asset Management | RFID Asset Tracking & Inventory Audit Solutions" />
+        <meta name="twitter:description" content="RFID and barcode-based fixed asset management, automated audits, lifecycle tracking, depreciation calculations, and regulatory compliance solutions." />
+        <link rel="canonical" href="https://valuekare.in/fixed-asset-inventory" />
+      </Helmet>
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary/10 via-accent to-secondary py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -120,8 +130,8 @@ export function FixedAssetPage({ onNavigate }: FixedAssetPageProps) {
               regulatory compliance effortlessly.
             </p>
             <div className="flex gap-4 justify-center">
-              <Button size="lg" onClick={() => onNavigate?.('contact')}>Request Demo</Button>
-              <Button size="lg" variant="outline" onClick={() => onNavigate?.('contact')}>
+              <Button size="lg" onClick={() => navigate('/contact')}>Request Demo</Button>
+              <Button size="lg" variant="outline" onClick={() => navigate('/contact')}>
                 Get Quote
               </Button>
             </div>
@@ -231,7 +241,7 @@ export function FixedAssetPage({ onNavigate }: FixedAssetPageProps) {
                   <span>Mobile app for on-the-go asset verification</span>
                 </li>
               </ul>
-              <Button size="lg" onClick={() => onNavigate?.('contact')}>
+              <Button size="lg" onClick={() => navigate('/contact')}>
                 Learn More About RFID
               </Button>
             </div>
@@ -290,14 +300,14 @@ export function FixedAssetPage({ onNavigate }: FixedAssetPageProps) {
             <Button 
               size="lg" 
               variant="secondary"
-              onClick={() => onNavigate?.('contact')}
+              onClick={() => navigate('/contact')}
             >
               Schedule a Demo
             </Button>
             <Button 
               size="lg" 
               className="bg-white text-primary hover:bg-white/90"
-              onClick={() => onNavigate?.('contact')}
+              onClick={() => navigate('/contact')}
             >
               Contact Sales
             </Button>

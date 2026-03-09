@@ -5,6 +5,17 @@ import { Helmet } from "react-helmet-async";
 export function ContactPage() {
   return (
     <div className="pt-20">
+      <Helmet>
+        <title>Contact Us | ValueKare Group - Healthcare Solutions Inquiry</title>
+        <meta name="description" content="Get in touch for RFID asset management, EMR systems, medical tourism, and fixed asset audit inquiries. Transform your healthcare operations today." />
+        <meta property="og:title" content="Contact Us | ValueKare Group - Healthcare Solutions Inquiry" />
+        <meta property="og:description" content="Get in touch for RFID asset management, EMR systems, medical tourism, and fixed asset audit inquiries. Transform your healthcare operations today." />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Us | ValueKare Group - Healthcare Solutions Inquiry" />
+        <meta name="twitter:description" content="Get in touch for RFID asset management, EMR systems, medical tourism, and fixed asset audit inquiries. Transform your healthcare operations today." />
+        <link rel="canonical" href="https://valuekare.in/contact" />
+      </Helmet>
       {/* Page Header */}
       <section className="relative bg-gradient-to-br from-[#0d1912] via-[#0f2418] to-[#0b1a12] py-16 overflow-hidden">
         {/* Ambient green glow (more controlled, more premium) */}

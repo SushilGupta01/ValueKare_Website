@@ -1,12 +1,11 @@
 import { FileText, Activity, Clipboard, Users, FileCheck, TrendingUp, Shield, Clock } from 'lucide-react';
 import { Card } from '../components/ui/card';
 import { Button } from '../components/ui/button';
+import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
-interface PatientEMRPageProps {
-  onNavigate?: (page: string) => void;
-}
-
-export function PatientEMRPage({ onNavigate }: PatientEMRPageProps) {
+export function PatientEMRPage() {
+  const navigate = useNavigate();
   const features = [
     {
       icon: <FileText className="w-8 h-8 text-primary" />,
@@ -63,6 +62,17 @@ export function PatientEMRPage({ onNavigate }: PatientEMRPageProps) {
 
   return (
     <div className="min-h-screen pt-20">
+      <Helmet>
+        <title>Patient EMR System | Electronic Medical Records for Hospitals</title>
+        <meta name="description" content="HIPAA-compliant Electronic Medical Records system with OPD/IPD management, digital prescriptions, lab integration, and comprehensive patient data solutions." />
+        <meta property="og:title" content="Patient EMR System | Electronic Medical Records for Hospitals" />
+        <meta property="og:description" content="HIPAA-compliant Electronic Medical Records system with OPD/IPD management, digital prescriptions, lab integration, and comprehensive patient data solutions." />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Patient EMR System | Electronic Medical Records for Hospitals" />
+        <meta name="twitter:description" content="HIPAA-compliant Electronic Medical Records system with OPD/IPD management, digital prescriptions, lab integration, and comprehensive patient data solutions." />
+        <link rel="canonical" href="https://valuekare.in/patient-emr" />
+      </Helmet>
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary/10 via-accent to-secondary py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -76,8 +86,8 @@ export function PatientEMRPage({ onNavigate }: PatientEMRPageProps) {
               Streamline patient care, improve efficiency, and enhance clinical outcomes.
             </p>
             <div className="flex gap-4 justify-center">
-              <Button size="lg" onClick={() => onNavigate?.('contact')}>Request Demo</Button>
-              <Button size="lg" variant="outline" onClick={() => onNavigate?.('contact')}>
+              <Button size="lg" onClick={() => navigate('/contact')}>Request Demo</Button>
+              <Button size="lg" variant="outline" onClick={() => navigate('/contact')}>
                 Get Quote
               </Button>
             </div>
@@ -171,14 +181,14 @@ export function PatientEMRPage({ onNavigate }: PatientEMRPageProps) {
             <Button 
               size="lg" 
               variant="secondary"
-              onClick={() => onNavigate?.('contact')}
+              onClick={() => navigate('/contact')}
             >
               Schedule a Demo
             </Button>
             <Button 
               size="lg" 
               className="bg-white text-primary hover:bg-white/90"
-              onClick={() => onNavigate?.('contact')}
+              onClick={() => navigate('/contact')}
             >
               Contact Sales
             </Button>

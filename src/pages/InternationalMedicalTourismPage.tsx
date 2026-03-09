@@ -1,13 +1,12 @@
 import { Globe, Heart, Plane, Building2, Shield, Award, CheckCircle, Stethoscope } from 'lucide-react';
 import { Card } from '../components/ui/card';
 import { Button } from '../components/ui/button';
+import { useNavigate } from 'react-router-dom';
 import infographic from 'figma:asset/002c452449522e77edad068251d057b7c59aff45.png';
+import { Helmet } from 'react-helmet-async';
 
-interface InternationalMedicalTourismPageProps {
-  onNavigate?: (page: string) => void;
-}
-
-export function InternationalMedicalTourismPage({ onNavigate }: InternationalMedicalTourismPageProps) {
+export function InternationalMedicalTourismPage() {
+  const navigate = useNavigate();
   const procedures = [
     {
       name: 'Dental Implant',
@@ -101,6 +100,17 @@ export function InternationalMedicalTourismPage({ onNavigate }: InternationalMed
 
   return (
     <div className="min-h-screen pt-20">
+      <Helmet>
+        <title>Medical Tourism India | Affordable Treatment with World-Class Care</title>
+        <meta name="description" content="Save 60-90% on cardiac, orthopedic, cancer treatments in India. JCI accredited hospitals, expert specialists, and complete medical tourism care coordination." />
+        <meta property="og:title" content="Medical Tourism India | Affordable Treatment with World-Class Care" />
+        <meta property="og:description" content="Save 60-90% on cardiac, orthopedic, cancer treatments in India. JCI accredited hospitals, expert specialists, and complete medical tourism care coordination." />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Medical Tourism India | Affordable Treatment with World-Class Care" />
+        <meta name="twitter:description" content="Save 60-90% on cardiac, orthopedic, cancer treatments in India. JCI accredited hospitals, expert specialists, and complete medical tourism care coordination." />
+        <link rel="canonical" href="https://valuekare.in/medical-tourism" />
+      </Helmet>
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary/10 via-accent to-secondary py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -114,8 +124,8 @@ export function InternationalMedicalTourismPage({ onNavigate }: InternationalMed
               expert specialists, and comprehensive care coordination services.
             </p>
             <div className="flex gap-4 justify-center">
-              <Button size="lg" onClick={() => onNavigate?.('contact')}>Get Medical Assistance</Button>
-              <Button size="lg" variant="outline" onClick={() => onNavigate?.('contact')}>
+              <Button size="lg" onClick={() => navigate('/contact')}>Get Medical Assistance</Button>
+              <Button size="lg" variant="outline" onClick={() => navigate('/contact')}>
                 Request Consultation
               </Button>
             </div>
@@ -193,7 +203,7 @@ export function InternationalMedicalTourismPage({ onNavigate }: InternationalMed
           </div>
 
           <div className="text-center">
-            <Button size="lg" onClick={() => onNavigate?.('contact')}>
+            <Button size="lg" onClick={() => navigate('/contact')}>
               Get Medical Assistance
             </Button>
           </div>
@@ -331,14 +341,14 @@ export function InternationalMedicalTourismPage({ onNavigate }: InternationalMed
             <Button 
               size="lg" 
               variant="secondary"
-              onClick={() => onNavigate?.('contact')}
+              onClick={() => navigate('/contact')}
             >
               Get Medical Assistance
             </Button>
             <Button 
               size="lg" 
               className="bg-white text-primary hover:bg-white/90"
-              onClick={() => onNavigate?.('contact')}
+              onClick={() => navigate('/contact')}
             >
               Contact Our Team
             </Button>

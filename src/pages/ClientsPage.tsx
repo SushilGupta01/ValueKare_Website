@@ -6,6 +6,7 @@ import {
   CardDescription,
   CardContent,
 } from "../components/ui/card";
+import { Helmet } from "react-helmet-async";
 
 // Importing Client Logos
 import ckBirlaLogo from "../assets/images/client/client-1.png";
@@ -107,6 +108,17 @@ const clientsList = [
 export function ClientsPage() {
   return (
     <div className="pt-20">
+      <Helmet>
+        <title>Our Clients | Healthcare Organizations Trusting ValueKare</title>
+        <meta name="description" content="Trusted by Apollo Hospitals, Fortis, Manipal, HCG, Kroll, CK Birla Group and more. See client success stories and industry partnerships." />
+        <meta property="og:title" content="Our Clients | Healthcare Organizations Trusting ValueKare" />
+        <meta property="og:description" content="Trusted by Apollo Hospitals, Fortis, Manipal, HCG, Kroll, CK Birla Group and more. See client success stories and industry partnerships." />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Our Clients | Healthcare Organizations Trusting ValueKare" />
+        <meta name="twitter:description" content="Trusted by Apollo Hospitals, Fortis, Manipal, HCG, Kroll, CK Birla Group and more. See client success stories and industry partnerships." />
+        <link rel="canonical" href="https://valuekare.in/clients" />
+      </Helmet>
       {/* ================= HEADER (unchanged content, refined look) ================= */}
       <section className="relative bg-gradient-to-br from-[#0d1912] via-[#0f2418] to-[#0b1a12] py-16 overflow-hidden">
         <div className="absolute -top-32 -right-32 w-[420px] h-[420px] bg-[#8BC34A]/18 rounded-full blur-[140px]" />

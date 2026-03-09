@@ -2,10 +2,22 @@ import { motion } from 'motion/react';
 import { Services } from '../components/Services';
 import { Expertise } from '../components/Expertise';
 import { IndustryCoverage } from '../components/IndustryCoverage';
+import { Helmet } from 'react-helmet-async';
 
 export function ServicesPage() {
   return (
     <div className="pt-20">
+      <Helmet>
+        <title>Healthcare Services | RFID Asset Management, EMR & Medical Tourism</title>
+        <meta name="description" content="Comprehensive healthcare services including RFID asset tracking, electronic medical records, fixed asset audits, and inventory management solutions." />
+        <meta property="og:title" content="Healthcare Services | RFID Asset Management, EMR & Medical Tourism" />
+        <meta property="og:description" content="Comprehensive healthcare services including RFID asset tracking, electronic medical records, fixed asset audits, and inventory management solutions." />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Healthcare Services | RFID Asset Management, EMR & Medical Tourism" />
+        <meta name="twitter:description" content="Comprehensive healthcare services including RFID asset tracking, electronic medical records, fixed asset audits, and inventory management solutions." />
+        <link rel="canonical" href="https://valuekare.in/services" />
+      </Helmet>
       {/* Page Header */}
       <section className="relative bg-gradient-to-br from-[#0d1912] via-[#0f2418] to-[#0b1a12] py-16 overflow-hidden">
 

@@ -28,7 +28,7 @@ export function CSRInitiative() {
   ];
 
   return (
-    <section className="py-28 bg-[#f6f5fb]">
+    <section className="py-28 bg-white">
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         <div className="grid lg:grid-cols-12 gap-20 items-center">
 
